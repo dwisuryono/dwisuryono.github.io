@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    background-color: #ee0050;
+    padding: 20px 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    display: flex;
+    color: #ffdde8;
+    align-items: center;
+}
+
+nav .logo img {
+    margin-right: 15px;
+    filter: brightness(0) invert(1);
+}
+
+nav .logo h3 {
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 30%;
+    justify-content: space-between;
+}
+
+nav ul li a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #ffdde8;
+}
+
+nav ul li a:hover {
+    transition: all 0.2s;
+    color: white;
+}
+
+nav .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+    cursor: pointer;
+}
+
+nav .menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #ffdde8;
+}
+
+@media screen and (max-width: 768px){
+    nav ul {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 576px){
+    nav ul {
+        background-color: #ff3378;
+        position: absolute;
+        display: flex;
+        top: 72px;
+        bottom: 0;
+        right: 100%;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transition: all 0.5s;
+    }
+    nav ul.slide {
+        right: 0;
+        transition: all 0.5s;
+    }
+
+    nav .menu-toggle {
+        display: flex;
+    }
+
+    nav .menu-toggle span {
+        transform-origin: 0 0;
+        transition: all 0.5s;
+    }
+
+    nav div.menu-toggle.animation span:nth-child(1) {
+        transform: rotate(45deg) translate(2px, -2px);
+    }
+
+    nav div.menu-toggle.animation span:nth-child(2) {
+        opacity: 0;
+        transform: scale(0);
+    }
+    nav div.menu-toggle.animation span:nth-child(3) {
+        transform: rotate(-45deg) translate(-1px, 1px);
+    }
+}
+/* End Navbar */
+
+
+/* Welcome Section */
+
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #222;
+    text-align: center;
+    color: white;
+}
+
+#welcome-section h1 {
+    font-size: 3rem;
+}
+
+#welcome-section p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #ff3378;
+}
+
+/* End Welcome Section */
+
+/* Project */
+
+#project {
+    background-color: #45567d;
+    color: white;
+    padding: 40px;
+}
+
+#project h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#project hr {
+    background-color: white;
+    display: flex;
+    width: 60%;
+    height: 5px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+#project .all-project {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}   
+
+#project .project-tile {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 30%;
+    height:min-content;
+}
+
+#project .project-tile a {
+    text-decoration: none;
+    color: white;
+}
+
+#project .project-tile a:hover svg * {
+    fill: #FF6700;
+    transition: all 0.5s ease-out;
+}
+
+#project .project-tile .img-project {
+    height: 350px;
+    background-color: #b8b8b8;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#project .project-tile .desc-project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    padding: 20px 0;
+}
+
+#project .project-tile .desc-project svg{
+    padding-top: 3px;
+    margin: auto 15px;
+}
+
+#project .project-tile .desc-project p{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.show-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.show-btn button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #222;
+    border: 1px solid #222;
+    border-radius: 5px;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: all 0.3s;
+}
+
+.show-btn svg {
+    margin-left: 5px;
+    transition: all 0.3s;
+}
+
+.show-btn button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 4px #ee0050;
+    background-color: #ee0050;
+    border: 1px solid #ee0050;
+    transition: all 0.3s;
+}
+
+.show-btn button:hover svg {
+    margin-left: 8px;
+    transition: all 0.3s;
+}
+
+@media screen and (max-width: 810px) {
+    #project .project-tile {
+        width: 45%;
+        margin-top: 30px;
+    }
+
+    #project .project-tile .desc-project {
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #project .project-tile {
+        width: 80%;
+        margin-top: 30px;
+    }
+}
+
+/* End Project */
+
+/* Profile */
+
+#profile {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 150px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profile h1 {
+    font-size: 3rem;
+}
+
+#profile p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+#profile .contact {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#profile .contact .contact-icon {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin: 20px;
+}
+
+#profile .contact .contact-icon #profile-link {
+    display: flex;
+    align-items: center;
+}
+
+#profile .contact .contact-icon a {
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+#profile .contact .contact-icon a:hover {
+    text-decoration: none;
+    transition: all 0.5s;
+    transform: translateY(8px);
+}
+
+#profile .contact .contact-icon #profile-link svg {
+    margin-right: 5px;
+}
+
+#profile .contact .contact-icon #profile-link p {
+    text-decoration: none;
+    color: #eee;
+    text-shadow: 2px 2px 4px black;
+}
+
+@media screen and (max-width: 576px) {
+    #profile .contact {
+        flex-direction: column;
+    }
+}
+
+/* End Profile */
+
+hr.line {
+    height: 3px;
+    background-color: #ee0050;
+    border: none;
+}
+
+/* Footer */
+
+#footer {
+    background-color: #222;
+    padding: 25px 50px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#footer .desc-footer {
+    width: 70%;
+}
+
+#footer .copyright {
+    width: 30%;
+    text-align: right;
+}
+
+/* End Footer */
